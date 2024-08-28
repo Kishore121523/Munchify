@@ -11,7 +11,7 @@ const Navbar = () => {
         alt="Logo" 
         className="w-[170px]"
       />
-      <ul className="flex list-none gap-[20px] text-[#49557e] text-[18px]">
+      <ul className="flex list-none gap-[20px] text-[#49557e] text-xl">
         <li 
         onClick={() => setMenu("home")} 
         className={`cursor-pointer duration-300 ${menu === "home" ? "pb-[2px] border-b-2 border-[#49557e]" : ""}`}>
@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="absolute min-w-[10px] min-h-[10px] bg-[#ff6347] rounded-[5px] top-[-8px] right-[-8px]"></div>
         </div>
         <button 
-        className="lowercase bg-transparent text-[16px] text-[#49557e] border border-[#ff6347] py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]">
+        className="lowercase bg-transparent text-xl text-[#49557e] border border-[#ff6347] py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]">
           Sign In
         </button>
       </div>

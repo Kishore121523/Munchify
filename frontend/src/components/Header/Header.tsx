@@ -11,7 +11,7 @@ const Header = () => {
           Delight in a curated menu that showcases a variety of mouth-watering dishes, crafted with premium ingredients by expert chefs. We’re dedicated to making your dining experience exceptional, one meal at a time.
         </p>
         <button className="border-none b-none text-[#747474] font-[500] py-[1vw] px-[2.3vw] bg-white 
-        text-[1vw] rounded-[50px]">
+        text-xl rounded-[50px]">
           View Menu
         </button>
       </div>

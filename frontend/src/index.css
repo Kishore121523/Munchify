@@ -17,3 +17,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.custom-scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}

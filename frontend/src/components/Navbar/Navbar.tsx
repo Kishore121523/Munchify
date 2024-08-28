@@ -9,7 +9,7 @@ const Navbar = () => {
       <img 
         src={assets.logo} 
         alt="Logo" 
-        className="w-[150px]"
+        className="w-[170px]"
       />
       <ul className="flex list-none gap-[20px] text-[#49557e] text-[18px]">
         <li 
@@ -42,7 +42,7 @@ const Navbar = () => {
         <button 
         className="lowercase bg-transparent text-[16px] text-[#49557e] border border-[#ff6347] py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]">
           Sign In
-          </button>
+        </button>
       </div>
     </div>
   );

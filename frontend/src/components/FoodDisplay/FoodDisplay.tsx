@@ -20,14 +20,16 @@ const FoodDisplay = ({ category }: FoodDisplayProps) => {
       <h2 className="text-[2vw] font-semibold leading-tight tracking-wide text-black">Top dishes near you</h2>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] mt-[30px] gap-[30px] gap-y-[50px]">
         {food_list.map((item,index)=>{
-          return <FoodItem 
-            key={index} 
-            id={item._id}
-            name={item.name} 
-            description={item.description}
-            price={item.price}
-            image = {item.image}
-          />
+          if(category==="All" || category===item.category){
+            return <FoodItem 
+              key={index} 
+              id={item._id}
+              name={item.name} 
+              description={item.description}
+              price={item.price}
+              image = {item.image}
+            />
+          }
         })}
       </div>
     </div>

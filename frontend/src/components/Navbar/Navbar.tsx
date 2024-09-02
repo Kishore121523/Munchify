@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+interface NavbarProps{
+  setShowLogin: Dispatch<SetStateAction<boolean>>
+}
+
+const Navbar = ({setShowLogin}:NavbarProps) => {
   const [menu, setMenu] = useState("home")
 
   return (
@@ -44,7 +48,9 @@ const Navbar = () => {
           <div className="absolute min-w-[10px] min-h-[10px] bg-tomato rounded-[5px] top-[-8px] right-[-8px]"></div>
         </div>
         <button 
-        className="lowercase bg-transparent text-xl text-textGray border border-tomato py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]">
+        className="lowercase bg-transparent text-xl text-textGray border border-tomato py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]"
+        onClick={() => setShowLogin(true)}
+        >
           Sign In
         </button>
       </div>

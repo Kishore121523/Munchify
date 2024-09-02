@@ -2,7 +2,7 @@
 const Header = () => {
   return (
     <div className="h-[34vw] my-[30px] mx-auto bg-[url('/header_img.png')] bg-no-repeat bg-contain relative">
-      <div className="absolute flex flex-col items-start gap-[1.5vw] max-w-[60%] bottom-[10%] left-[6vw] animate-fadeIn z-10">
+      <div className="absolute flex flex-col items-start gap-[1.5vw] max-w-[60%] bottom-[10%] left-[6vw] animate-fadeIn">
         <h2 className="text-[3.5vw] font-bold leading-tight tracking-wide text-white">
           Savor the Best Food, Right at Your Doorstep
         </h2>

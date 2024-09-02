@@ -35,7 +35,7 @@ const ExploreMenu = ({category, setCategory}: ExploreMenuProps) => {
             )
           })}
         </div>
-        <hr className="my-[10px] mx-[0px] bg-[#e2e2e2] border-none" />
+        <hr className="w-[100%] h-[2px] my-[10px] mx-0 bg-[#e2e2e2] border-none" />
       </div>
     </div>
   )

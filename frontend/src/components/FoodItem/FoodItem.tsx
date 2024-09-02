@@ -38,7 +38,7 @@ const FoodItem = ({id,name,price,description,image}:FoodItemProps) => {
                 className="w-[30px]" 
                 onClick={()=>removeFromCart(id)} 
                 src={assets.remove_icon_red} 
-                alt="remove"/>
+                alt="remove icon"/>
               <p className="">
                 {cartItems[id]}
               </p>
@@ -46,7 +46,7 @@ const FoodItem = ({id,name,price,description,image}:FoodItemProps) => {
                 className="w-[30px]" 
                 src={assets.add_icon_green} 
                 onClick={()=>addToCart(id)} 
-                alt="add" />
+                alt="add icon" />
             </div>
         }
       </div>

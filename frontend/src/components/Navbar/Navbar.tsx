@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home")
@@ -12,26 +13,29 @@ const Navbar = () => {
         className="w-[170px]"
       />
       <ul className="flex list-none gap-[20px] text-textGray text-xl">
-        <li 
-        onClick={() => setMenu("home")} 
-        className={`cursor-pointer duration-300 ${menu === "home" ? "pb-[2px] border-b-2 border-textGray" : ""}`}>
+        <Link 
+          onClick={() => setMenu("home")}
+          className={`cursor-pointer duration-300 ${menu === "home" ? "pb-[2px] border-b-2 border-textGray" : ""}`} to="/">
           Home
-        </li>
-        <li 
+        </Link>
+        <a 
+        href="#explore-menu"
         onClick={() => setMenu("menu")} 
         className={`cursor-pointer duration-300 ${menu === "menu" ? "pb-[2px] border-b-2 border-textGray" : ""}`}>
           Menu
-        </li>
-        <li 
+        </a>
+        <a 
+        href="#app-download"
         onClick={() => setMenu("mobile-app")} 
         className={`cursor-pointer duration-300 ${menu === "mobile-app" ? "pb-[2px] border-b-2 border-textGray" : ""}`}>
           Mobile-App
-        </li>
-        <li 
+        </a>
+        <a 
+        href="#footer"
         onClick={() => setMenu("contact")} 
         className={`cursor-pointer duration-300 ${menu === "contact" ? "pb-[2px] border-b-2 border-textGray" : ""}`}>
           Contact
-        </li>
+        </a>
       </ul>
       <div className="flex items-center gap-[40px]">
         <img src={assets.search_icon} alt="search" />

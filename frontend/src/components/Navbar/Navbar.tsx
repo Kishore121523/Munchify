@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
 
 interface NavbarProps{
   setShowLogin: Dispatch<SetStateAction<boolean>>
@@ -8,6 +9,15 @@ interface NavbarProps{
 
 const Navbar = ({setShowLogin}:NavbarProps) => {
   const [menu, setMenu] = useState("home")
+
+  const context = useContext(StoreContext)
+
+  if(!context){
+      return <div>Error: food_list is not available.</div>;
+  }
+
+  const {getTotalCartAmount} = context
+
 
   return (
     <div className="py-[20px] px-0 flex justify-between items-center lowercase">
@@ -50,7 +60,7 @@ const Navbar = ({setShowLogin}:NavbarProps) => {
           <Link to="/cart">
             <img className="w-[20px]" src={assets.basket_icon} alt="cart" />
           </Link>
-          <div className="absolute min-w-[10px] min-h-[10px] bg-tomato rounded-[5px] top-[-8px] right-[-8px]"></div>
+          <div className={`${getTotalCartAmount() !== 0 ? "absolute min-w-[10px] min-h-[10px] bg-tomato rounded-[5px] top-[-8px] right-[-8px]":""}`}></div>
         </div>
         <button 
         className="lowercase bg-transparent text-[14px] text-textGray border border-tomato py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]"

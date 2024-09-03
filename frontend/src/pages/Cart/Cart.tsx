@@ -9,18 +9,18 @@ const Cart = () => {
     return <div>Error: food_list is not available.</div>;
   }
 
-  const {cartItems, food_list, removeFromCart} = context
+  const {cartItems, food_list, removeFromCart, getTotalCartAmount} = context
 
   return (
     <div className="mt-[100px]">
-      <div className="">
+      <div>
         <div className="grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-textGray text-[12px]">
-          <p className="">Items</p>
-          <p className="">Title</p>
-          <p className="">Price</p>
-          <p className="">Quantity</p>
-          <p className="">Total</p>
-          <p className="">Remove</p>
+          <p>Items</p>
+          <p>Title</p>
+          <p>Price</p>
+          <p>Quantity</p>
+          <p>Total</p>
+          <p>Remove</p>
         </div>
         <br />
         <hr className="w-[100%] h-[1px] bg-[#b4b3b3] border-none" />
@@ -50,17 +50,17 @@ const Cart = () => {
           <div>
             <div className="flex justify-between text-[#555555]">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>$ {getTotalCartAmount()}</p>
             </div>
             <hr className="w-[100%] h-[1px] my-[10px] mx-0 bg-[#e2e2e2] border-none" />
             <div className="flex justify-between text-[#555555]">
               <p>Delivery Free</p>
-              <p>{2}</p>
+              <p>$ {2}</p>
             </div>
             <hr className="w-[100%] h-[1px] my-[10px] mx-0 bg-[#e2e2e2] border-none"/>
             <div className="flex justify-between text-[#555555]">
               <p>Total</p>
-              <p>{0}</p>
+              <p>$ {getTotalCartAmount()+2}</p>
             </div>
           </div>
           <button 
@@ -69,7 +69,7 @@ const Cart = () => {
           </button>
         </div>
         <div className="flex-1">
-          <div className="">
+          <div>
             <p className="text-[#555555]">Enter Promo Code</p>
             <div className="mt-[10px] flex justify-between items-center bg-[#eaeaea] rounded-[4px]"> 
               <input className="bg-transparent border-none outline-none pl-[10px]" type="text" placeholder="Promo Code" />

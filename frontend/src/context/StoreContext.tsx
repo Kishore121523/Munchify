@@ -11,6 +11,7 @@ interface StoreContextProps {
   cartItems: CartItems;
   addToCart: (itemId: string) => void;
   removeFromCart: (itemId: string) => void;
+  getTotalCartAmount: () => number;
 }
 
 interface StoreContextProviderProps {
@@ -42,11 +43,23 @@ const StoreContextProvider: React.FC<StoreContextProviderProps> = (props) => {
     });
   };
 
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for(const item in cartItems){
+      if(cartItems[item]>0){
+        const itemInfo = food_list.find((product)=> product._id === item)
+        totalAmount += itemInfo!.price * cartItems[item]
+      }
+    }
+    return totalAmount;
+  }
+
   const contextValue = {
     food_list,
     cartItems,
     addToCart,
     removeFromCart,
+    getTotalCartAmount
   };
 
   return (

@@ -8,7 +8,7 @@ export default {
         textGray: "#49557e",
       },
       animation: {
-        fadeIn: "fadeIn 1.5s",
+        fadeIn: "fadeIn 0.8s",
       },
       keyframes: {
         fadeIn: {

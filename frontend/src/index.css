@@ -22,3 +22,7 @@ a {
 .custom-scrollbar-hidden::-webkit-scrollbar {
     display: none;
 }
+
+.no-scroll {
+    overflow: hidden;
+}

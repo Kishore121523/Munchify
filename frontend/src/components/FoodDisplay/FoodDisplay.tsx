@@ -17,8 +17,8 @@ const FoodDisplay = ({ category }: FoodDisplayProps) => {
 
   return (
     <div className="mt-[30px]" id="food-display">
-      <h2 className="text-[2vw] font-semibold leading-tight tracking-wide text-black">Top dishes near you</h2>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] mt-[30px] gap-[30px] gap-y-[50px]">
+      <h2 className="text-[2vw] text-center font-semibold leading-tight tracking-wide text-black">Top dishes near you</h2>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] mt-[30px] gap-[30px] gap-y-[50px]">
         {food_list.map((item,index)=>{
           if(category==="All" || category===item.category){
             return <FoodItem 

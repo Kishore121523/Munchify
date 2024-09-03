@@ -52,7 +52,7 @@ const FoodItem = ({id,name,price,description,image}:FoodItemProps) => {
       </div>
       <div className="p-[20px]">
         <div className="flex justify-between items-center mb-[10px]">
-          <p className="text-[20px] font-[500]">{name}</p>
+          <p className="text-[18px] font-[500]">{name}</p>
           <img className="w-[70px]" src={assets.rating_starts} alt="rating" />
         </div>
         <p className="text-[#676767] text-[14px]">{description}</p>

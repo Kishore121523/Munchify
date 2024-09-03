@@ -11,15 +11,18 @@ const Navbar = ({setShowLogin}:NavbarProps) => {
 
   return (
     <div className="py-[20px] px-0 flex justify-between items-center lowercase">
-      <img 
-        src={assets.logo} 
-        alt="Logo" 
-        className="w-[170px]"
-      />
-      <ul className="flex list-none gap-[20px] text-textGray text-xl">
+      <Link to="/">
+          <img 
+            src={assets.logo} 
+            alt="Logo" 
+            className="w-[150px]"
+            />
+      </Link>
+      <ul className="flex list-none gap-[20px] text-textGray text-[16px]">
         <Link 
           onClick={() => setMenu("home")}
-          className={`cursor-pointer duration-300 ${menu === "home" ? "pb-[2px] border-b-2 border-textGray" : ""}`} to="/">
+          className={`cursor-pointer duration-300 ${menu === "home" ? "pb-[2px] border-b-2 border-textGray" : ""}`} 
+          to="/">
           Home
         </Link>
         <a 
@@ -42,13 +45,15 @@ const Navbar = ({setShowLogin}:NavbarProps) => {
         </a>
       </ul>
       <div className="flex items-center gap-[40px]">
-        <img src={assets.search_icon} alt="search" />
+        <img className="w-[20px]" src={assets.search_icon} alt="search" />
         <div className="relative">
-          <img src={assets.basket_icon} alt="cart" />
+          <Link to="/cart">
+            <img className="w-[20px]" src={assets.basket_icon} alt="cart" />
+          </Link>
           <div className="absolute min-w-[10px] min-h-[10px] bg-tomato rounded-[5px] top-[-8px] right-[-8px]"></div>
         </div>
         <button 
-        className="lowercase bg-transparent text-xl text-textGray border border-tomato py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]"
+        className="lowercase bg-transparent text-[14px] text-textGray border border-tomato py-[10px] px-[30px] cursor-pointer rounded-[50px] duration-300 hover:bg-[#fff4f2]"
         onClick={() => setShowLogin(true)}
         >
           Sign In

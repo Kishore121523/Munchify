@@ -58,12 +58,12 @@ const Cart = () => {
             <hr className="w-[100%] h-[1px] my-[10px] mx-0 bg-[#e2e2e2] border-none" />
             <div className="flex justify-between text-[#555555]">
               <p>Delivery Free</p>
-              <p>$ {2}</p>
+              <p>$ {getTotalCartAmount()===0?0:2}</p>
             </div>
             <hr className="w-[100%] h-[1px] my-[10px] mx-0 bg-[#e2e2e2] border-none"/>
             <div className="flex justify-between text-[#555555]">
               <p>Total</p>
-              <p>$ {getTotalCartAmount()+2}</p>
+              <p>$ {getTotalCartAmount()===0?0:getTotalCartAmount()+2}</p>
             </div>
           </div>
           <button 

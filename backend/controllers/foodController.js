@@ -65,7 +65,7 @@ const updateFood = async (req, res) => {
     if (req.file) {
       // Delete the old image
       fs.unlink(`uploads/${food.image}`, () => {});
-      food.image = `${req.file.filename}`;
+      food.image = `${req.file.filename}`; // save the new image name to the database
     }
 
     // Update the other fields if they are provided in the request
@@ -74,7 +74,7 @@ const updateFood = async (req, res) => {
     food.price = req.body.price || food.price;
     food.category = req.body.category || food.category;
 
-    // Save the updated food item
+    // Save the updated food item to the database
     await food.save();
 
     res.json({ success: true, message: "Food Updated Successfully" });
@@ -84,4 +84,5 @@ const updateFood = async (req, res) => {
   }
 };
 
+// exporting all the functions to be used in other files
 export { addFood, listFood, removeFood, updateFood };

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// create the schema
+// create the schema to store the values in the database
 const foodSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
